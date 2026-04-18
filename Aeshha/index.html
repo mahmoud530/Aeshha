@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeshha – Authentic Egyptian Experiences</title>
+    <meta name="description"
+        content="Connect with local Egyptians for authentic food, craft, tour, and photography experiences. Discover Egypt like never before." />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar transparent" id="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Aeshha Logo" />
+                <span class="logo-text">Aeshha</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="experiences.html" class="nav-link">Experiences</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline-white btn-sm">Login</a>
+                <a href="login.html#register" class="btn btn-secondary btn-sm">Join Free</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="login.html" class="btn btn-primary btn-block" style="margin-top:8px">Login / Register</a>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="hero-particles"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text animate-fade-up">
+                <div class="hero-tag">
+                    <span class="tag-dot"></span>
+                    <span>Authentic Egyptian Experiences</span>
+                </div>
+                <h1 class="hero-title">
+                    Live Egypt<br />
+                    <span class="hero-highlight">Like a Local</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Connect with passionate locals—enjoy home-cooked meals, ancient crafts,
+                    hidden tours, and stunning photography across Egypt's most iconic destinations.
+                </p>
+                <div class="hero-actions">
+                    <a href="experiences.html" class="btn btn-secondary btn-xl">
+                        <span>🔍</span> Explore Experiences
+                    </a>
+                    <a href="login.html#register" class="btn btn-outline-white btn-xl">
+                        <span>✨</span> Become a Host
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-num" data-count="1200">0</span>+
+                        <span class="stat-label">Experiences</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-num" data-count="340">0</span>+
+                        <span class="stat-label">Local Hosts</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-num" data-count="8500">0</span>+
+                        <span class="stat-label">Happy Travelers</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="stat-num" data-count="27">0</span>
+                        <span class="stat-label">Governorates</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Search Bar -->
+            <div class="hero-search animate-fade-up delay-3">
+                <form class="search-form" id="hero-search-form" action="experiences.html">
+                    <div class="search-field">
+                        <span class="search-icon">📍</span>
+                        <input type="text" name="location" placeholder="Where in Egypt?" class="search-input" />
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field">
+                        <span class="search-icon">🎯</span>
+                        <select name="category" class="search-input search-select">
+                            <option value="">Any Experience</option>
+                            <option value="food">🍽️ Food & Cooking</option>
+                            <option value="crafts">🎨 Local Crafts</option>
+                            <option value="tours">🚣 Tours & Adventures</option>
+                            <option value="photography">📸 Photography</option>
+                        </select>
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field">
+                        <span class="search-icon">👥</span>
+                        <input type="number" name="guests" placeholder="Guests" min="1" max="20"
+                            class="search-input search-num" />
+                    </div>
+                    <button type="submit" class="btn btn-secondary search-btn">
+                        Search
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Hero Scroll Indicator -->
+        <div class="scroll-indicator animate-float">
+            <span>Scroll down</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIES SECTION ===== -->
+    <section class="section categories-section" id="categories">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-tag">✨ What We Offer</span>
+                <h2 class="section-title">Experience Categories</h2>
+                <p class="section-subtitle">
+                    From ancient crafts to mouth-watering street food—discover four pillars of authentic Egyptian
+                    culture.
+                </p>
+            </div>
+
+            <div class="categories-grid reveal">
+                <a href="experiences.html?category=food" class="category-card cat-food">
+                    <div class="cat-icon-wrap">
+                        <span class="cat-icon">🍽️</span>
+                    </div>
+                    <div class="cat-glow food-glow"></div>
+                    <h3>Food & Cooking</h3>
+                    <p>Home kitchens, street food tours & Egyptian cooking classes</p>
+                    <span class="cat-count">340+ experiences</span>
+                    <span class="cat-arrow">→</span>
+                </a>
+
+                <a href="experiences.html?category=crafts" class="category-card cat-crafts">
+                    <div class="cat-icon-wrap">
+                        <span class="cat-icon">🎨</span>
+                    </div>
+                    <div class="cat-glow crafts-glow"></div>
+                    <h3>Local Crafts</h3>
+                    <p>Pottery, papyrus, weaving, calligraphy & handmade souvenirs</p>
+                    <span class="cat-count">210+ experiences</span>
+                    <span class="cat-arrow">→</span>
+                </a>
+
+                <a href="experiences.html?category=tours" class="category-card cat-tours">
+                    <div class="cat-icon-wrap">
+                        <span class="cat-icon">🚣</span>
+                    </div>
+                    <div class="cat-glow tours-glow"></div>
+                    <h3>Tours & Adventures</h3>
+                    <p>Nile felucca rides, desert safaris & hidden village walks</p>
+                    <span class="cat-count">380+ experiences</span>
+                    <span class="cat-arrow">→</span>
+                </a>
+
+                <a href="experiences.html?category=photography" class="category-card cat-photo">
+                    <div class="cat-icon-wrap">
+                        <span class="cat-icon">📸</span>
+                    </div>
+                    <div class="cat-glow photo-glow"></div>
+                    <h3>Photography</h3>
+                    <p>Sunrise pyramids, souks market shots & golden hour portraits</p>
+                    <span class="cat-count">270+ experiences</span>
+                    <span class="cat-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED EXPERIENCES ===== -->
+    <section class="section featured-section" id="featured">
+        <div class="container">
+            <div class="featured-header reveal">
+                <div>
+                    <span class="section-tag">⭐ Top Rated</span>
+                    <h2 class="section-title">Featured Experiences</h2>
+                </div>
+                <a href="experiences.html" class="btn btn-outline">View All →</a>
+            </div>
+
+            <div class="experiences-grid" id="featured-experiences">
+                <!-- Cards injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section hiw-section" id="how-it-works">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-tag">🗺️ Simple Process</span>
+                <h2 class="section-title">How Aeshha Works</h2>
+                <p class="section-subtitle">Three simple steps to your next unforgettable adventure</p>
+            </div>
+
+            <div class="hiw-grid">
+                <div class="hiw-step reveal delay-1">
+                    <div class="hiw-icon-wrap primary">
+                        <span class="hiw-icon">🔍</span>
+                    </div>
+                    <div class="hiw-connector"></div>
+                    <span class="hiw-number">01</span>
+                    <h3>Discover</h3>
+                    <p>Browse hundreds of authentic experiences curated by verified local hosts across Egypt's 27
+                        governorates.</p>
+                </div>
+                <div class="hiw-step reveal delay-2">
+                    <div class="hiw-icon-wrap secondary">
+                        <span class="hiw-icon">📅</span>
+                    </div>
+                    <div class="hiw-connector"></div>
+                    <span class="hiw-number">02</span>
+                    <h3>Book</h3>
+                    <p>Choose your date, number of guests and instantly confirm your booking with our secure payment
+                        system.</p>
+                </div>
+                <div class="hiw-step reveal delay-3">
+                    <div class="hiw-icon-wrap accent">
+                        <span class="hiw-icon">🌟</span>
+                    </div>
+                    <span class="hiw-number">03</span>
+                    <h3>Experience</h3>
+                    <p>Meet your local host, immerse yourself in Egyptian culture, and earn loyalty points on every
+                        adventure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-tag">💬 Real Stories</span>
+                <h2 class="section-title">Travelers Love Aeshha</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal delay-1">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Cooking with Fatma in her Khan el-Khalili home was the highlight of my
+                        entire Egypt trip. The smell, the flavours, the laughter—unforgettable!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div>
+                            <strong>Sophie Laurent</strong>
+                            <span>Paris, France</span>
+                        </div>
+                        <div class="stars ml-auto">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal delay-2">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Ahmed took us on a felucca at sunset on the Nile in Aswan. We saw
+                        crocodile island, had tea with locals—it was like time travel.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div>
+                            <strong>Marco Chen</strong>
+                            <span>Shanghai, China</span>
+                        </div>
+                        <div class="stars ml-auto">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal delay-3">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The photography tour at Giza at sunrise with Khaled was spectacular. He
+                        knew every perfect angle. My photos went viral on Instagram!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LM</div>
+                        <div>
+                            <strong>Layla Mansour</strong>
+                            <span>Dubai, UAE</span>
+                        </div>
+                        <div class="stars ml-auto">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT / MISSION ===== -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="about-img-container">
+                        <img src="img/logo.png" alt="Aeshha Mission" class="about-logo-big" />
+                        <div class="about-badge">
+                            <span class="badge-icon">🏛️</span>
+                            <div>
+                                <strong>Est. 2025</strong>
+                                <span>Cairo, Egypt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal delay-2">
+                    <span class="section-tag">🪷 Our Mission</span>
+                    <h2 class="section-title" style="text-align:left">Authentic Egypt, One Story at a Time</h2>
+                    <p style="color:var(--color-text-muted);line-height:1.8;margin-bottom:1.5rem">
+                        Aeshha (عيشها — "Live It") was born from a simple belief: the soul of Egypt lives not in its
+                        monuments, but in its people. We connect curious travelers with passionate local hosts to create
+                        genuine human connections across cultures.
+                    </p>
+                    <p style="color:var(--color-text-muted);line-height:1.8;margin-bottom:2rem">
+                        Every experience on Aeshha supports local Egyptian families, preserves traditional crafts, and
+                        gives travelers memories that no museum or tour bus can offer.
+                    </p>
+                    <div class="about-pillars">
+                        <div class="pillar">
+                            <span class="pillar-icon">🤝</span>
+                            <div>
+                                <strong>Community First</strong>
+                                <p>Hosts keep 85% of every booking</p>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-icon">🛡️</span>
+                            <div>
+                                <strong>Safe & Verified</strong>
+                                <p>All hosts go through background checks</p>
+                            </div>
+                        </div>
+                        <div class="pillar">
+                            <span class="pillar-icon">🌍</span>
+                            <div>
+                                <strong>Eco-Friendly</strong>
+                                <p>1% of revenue supports local NGOs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box reveal">
+                <div class="cta-content">
+                    <h2>Ready to Live Egypt?</h2>
+                    <p>Join 8,500+ travelers who have already discovered the real Egypt through Aeshha.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="experiences.html" class="btn btn-secondary btn-lg">Browse Experiences</a>
+                    <a href="login.html#register" class="btn btn-outline-white btn-lg">Become a Host</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">Aeshha</div>
+                    <p>Connecting curious travelers with passionate local Egyptians for authentic, unforgettable
+                        cultural experiences.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">🌐</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="experiences.html?category=food">Food & Cooking</a></li>
+                        <li><a href="experiences.html?category=crafts">Local Crafts</a></li>
+                        <li><a href="experiences.html?category=tours">Tours & Adventures</a></li>
+                        <li><a href="experiences.html?category=photography">Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Aeshha</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Host Partners</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Aeshha. All rights reserved.</span>
+                <div class="flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
