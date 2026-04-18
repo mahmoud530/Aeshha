@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience Details – Aeshha</title>
+    <meta name="description"
+        content="Full details, photos, host info, and booking for an authentic Egyptian experience on Aeshha." />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/details.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Aeshha Logo" />
+                <span class="logo-text" style="color:var(--color-primary)">Aeshha</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" style="color:var(--color-text)">Home</a></li>
+                <li><a href="experiences.html" class="nav-link" style="color:var(--color-text)">Experiences</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                <a href="login.html#register" class="btn btn-secondary btn-sm">Join Free</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span style="background:var(--color-text)"></span>
+                <span style="background:var(--color-text)"></span>
+                <span style="background:var(--color-text)"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="login.html" class="btn btn-primary btn-block" style="margin-top:8px">Login / Register</a>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">›</span>
+                <a href="experiences.html">Experiences</a>
+                <span class="sep">›</span>
+                <span id="breadcrumb-name" class="current">Experience</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="details-main">
+        <div class="container">
+
+            <!-- Loading State -->
+            <div id="details-loading" class="details-loading">
+                <div class="spinner"></div>
+                <p>Loading experience…</p>
+            </div>
+
+            <!-- Experience Content (injected by JS) -->
+            <div id="details-content" class="details-content hidden">
+
+                <!-- Gallery -->
+                <div class="gallery-section">
+                    <div class="gallery-main">
+                        <img id="gallery-main-img" src="" alt="Experience" />
+                        <div class="gallery-badges" id="gallery-badges"></div>
+                        <button class="gallery-wishlist" id="gallery-wishlist" aria-label="Add to wishlist">♡</button>
+                    </div>
+                    <div class="gallery-thumbs" id="gallery-thumbs"></div>
+                </div>
+
+                <!-- Details Grid -->
+                <div class="details-grid">
+
+                    <!-- LEFT: Info -->
+                    <div class="details-left">
+
+                        <!-- Header -->
+                        <div class="exp-header">
+                            <div class="exp-category" id="exp-category"></div>
+                            <h1 class="exp-title" id="exp-title"></h1>
+                            <div class="exp-meta-bar">
+                                <div class="exp-rating">
+                                    <span class="stars" id="exp-stars"></span>
+                                    <strong id="exp-rating-num"></strong>
+                                    <span id="exp-reviews-count" class="reviews-link"></span>
+                                </div>
+                                <div class="exp-location">
+                                    <span>📍</span>
+                                    <span id="exp-location"></span>
+                                </div>
+                                <div class="exp-duration">
+                                    <span>⏱️</span>
+                                    <span id="exp-duration"></span>
+                                </div>
+                                <div class="exp-guests">
+                                    <span>👥</span>
+                                    <span id="exp-guests"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- About -->
+                        <div class="details-section">
+                            <h2 class="section-h2">About This Experience</h2>
+                            <p class="exp-description" id="exp-description"></p>
+                        </div>
+
+                        <!-- What's Included -->
+                        <div class="details-section">
+                            <h2 class="section-h2">What's Included</h2>
+                            <ul class="included-list" id="included-list"></ul>
+                        </div>
+
+                        <!-- Itinerary -->
+                        <div class="details-section">
+                            <h2 class="section-h2">Itinerary</h2>
+                            <div class="itinerary" id="itinerary"></div>
+                        </div>
+
+                        <!-- Host -->
+                        <div class="details-section host-section">
+                            <h2 class="section-h2">Meet Your Host</h2>
+                            <div class="host-card" id="host-card"></div>
+                        </div>
+
+                        <!-- Reviews -->
+                        <div class="details-section">
+                            <h2 class="section-h2">Guest Reviews</h2>
+                            <div class="reviews-summary" id="reviews-summary"></div>
+                            <div class="reviews-list" id="reviews-list"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT: Booking Widget -->
+                    <div class="details-right">
+                        <div class="booking-widget" id="booking-widget">
+                            <div class="booking-header">
+                                <div class="booking-price">
+                                    <span class="price-amount" id="booking-price"></span>
+                                    <span class="price-per"> / person</span>
+                                </div>
+                                <div class="booking-rating">
+                                    <span>★</span>
+                                    <strong id="booking-rating-num"></strong>
+                                    <span id="booking-reviews" class="text-muted"></span>
+                                </div>
+                            </div>
+
+                            <form class="booking-form" id="booking-form">
+                                <div class="booking-fields">
+                                    <div class="booking-field">
+                                        <label>Date</label>
+                                        <input type="date" id="booking-date" class="form-control" required />
+                                    </div>
+                                    <div class="booking-field">
+                                        <label>Guests</label>
+                                        <div class="guests-counter">
+                                            <button type="button" class="counter-btn" id="guests-minus">−</button>
+                                            <span id="guests-count">1</span>
+                                            <button type="button" class="counter-btn" id="guests-plus">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="booking-summary">
+                                    <div class="booking-row">
+                                        <span id="price-calc-label"></span>
+                                        <span id="price-calc-subtotal"></span>
+                                    </div>
+                                    <div class="booking-row">
+                                        <span>Service fee</span>
+                                        <span id="booking-fee"></span>
+                                    </div>
+                                    <div class="booking-row total">
+                                        <strong>Total</strong>
+                                        <strong id="booking-total"></strong>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-secondary btn-block btn-lg" id="book-btn">Reserve
+                                    Now</button>
+                                <p class="booking-note">You won't be charged yet</p>
+                            </form>
+
+                            <div class="booking-features">
+                                <div class="bf-item"><span>🛡️</span> Free cancellation 48h before</div>
+                                <div class="bf-item"><span>✅</span> Verified host</div>
+                                <div class="bf-item"><span>⭐</span> Earn loyalty points</div>
+                            </div>
+                        </div>
+
+                        <!-- Share & Save -->
+                        <div class="share-box">
+                            <button class="btn btn-outline btn-sm btn-block share-btn" id="share-btn">🔗 Share</button>
+                            <button class="btn btn-outline btn-sm btn-block wishlist-btn" id="wishlist-btn">♡ Save to
+                                Wishlist</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Similar Experiences -->
+                <div class="similar-section">
+                    <h2 class="section-title">Similar Experiences</h2>
+                    <div class="experiences-grid" id="similar-experiences"></div>
+                </div>
+
+            </div><!-- /details-content -->
+        </div>
+    </main>
+
+    <!-- BOOKING CONFIRMATION MODAL -->
+    <div class="modal-overlay" id="booking-modal" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-icon">🎉</div>
+            <h2 class="modal-title">Booking Confirmed!</h2>
+            <p class="modal-text" id="modal-text"></p>
+            <div class="modal-actions">
+                <a href="profile.html" class="btn btn-primary">View My Bookings</a>
+                <button class="btn btn-outline" id="modal-close">Continue Exploring</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">Aeshha</div>
+                    <p>Authentic Egyptian experiences, curated by passionate locals.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">🌐</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="experiences.html">All Experiences</a></li>
+                        <li><a href="experiences.html?category=food">Food & Cooking</a></li>
+                        <li><a href="experiences.html?category=tours">Tours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Aeshha. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

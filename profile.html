@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile – Aeshha</title>
+    <meta name="description" content="View your bookings, loyalty points, wishlist, and manage your Aeshha profile." />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Aeshha Logo" />
+                <span class="logo-text" style="color:var(--color-primary)">Aeshha</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" style="color:var(--color-text)">Home</a></li>
+                <li><a href="experiences.html" class="nav-link" style="color:var(--color-text)">Experiences</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm" id="logout-btn">Logout</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span style="background:var(--color-text)"></span>
+                <span style="background:var(--color-text)"></span>
+                <span style="background:var(--color-text)"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="login.html" class="btn btn-outline btn-block" style="margin-top:8px">Logout</a>
+    </div>
+
+    <!-- PROFILE HERO -->
+    <div class="profile-hero">
+        <div class="container">
+            <div class="profile-hero-content">
+                <div class="profile-avatar-wrap">
+                    <div class="profile-avatar" id="profile-avatar">AM</div>
+                    <button class="avatar-edit-btn" aria-label="Change photo">📷</button>
+                </div>
+                <div class="profile-hero-info">
+                    <h1 class="profile-name" id="profile-name">Ahmed Mansour</h1>
+                    <p class="profile-email" id="profile-email">ahmed.mansour@email.com</p>
+                    <div class="profile-badges">
+                        <span class="badge badge-gold">⭐ Gold Member</span>
+                        <span class="badge badge-accent">✅ Verified</span>
+                        <span class="badge badge-green">🌍 Traveler</span>
+                    </div>
+                </div>
+                <div class="profile-hero-actions">
+                    <button class="btn btn-outline-white btn-sm" id="edit-profile-btn">✏️ Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOYALTY POINTS BANNER -->
+    <div class="loyalty-banner">
+        <div class="container">
+            <div class="loyalty-card">
+                <div class="loyalty-left">
+                    <div class="loyalty-icon">🏆</div>
+                    <div class="loyalty-info">
+                        <span class="loyalty-label">Loyalty Points</span>
+                        <div class="loyalty-points" id="loyalty-points">
+                            <span class="points-num" data-count="2850">0</span>
+                            <span class="points-unit">pts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loyalty-progress">
+                    <div class="progress-header">
+                        <span class="progress-label">Progress to Platinum</span>
+                        <span class="progress-pct" id="progress-pct">57%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+                    </div>
+                    <div class="progress-legend">
+                        <span>Gold: 0 pts</span>
+                        <span>Platinum: 5,000 pts</span>
+                    </div>
+                </div>
+
+                <div class="loyalty-right">
+                    <div class="tier-levels">
+                        <div class="tier-item done">
+                            <span class="tier-icon">🥉</span>
+                            <span>Bronze</span>
+                        </div>
+                        <div class="tier-arrow">→</div>
+                        <div class="tier-item done">
+                            <span class="tier-icon">🥇</span>
+                            <span>Gold</span>
+                        </div>
+                        <div class="tier-arrow">→</div>
+                        <div class="tier-item current">
+                            <span class="tier-icon">💎</span>
+                            <span>Platinum</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" id="redeem-btn">Redeem Points</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="profile-main">
+        <div class="container">
+            <div class="profile-layout">
+
+                <!-- SIDEBAR NAV -->
+                <aside class="profile-sidebar">
+                    <nav class="profile-nav">
+                        <a href="#bookings" class="profile-nav-item active" data-tab="bookings">
+                            <span class="nav-icon">📅</span> My Bookings
+                            <span class="nav-badge" id="bookings-count">3</span>
+                        </a>
+                        <a href="#wishlist" class="profile-nav-item" data-tab="wishlist">
+                            <span class="nav-icon">❤️</span> Wishlist
+                            <span class="nav-badge" id="wishlist-count">4</span>
+                        </a>
+                        <a href="#reviews" class="profile-nav-item" data-tab="reviews">
+                            <span class="nav-icon">⭐</span> My Reviews
+                        </a>
+                        <a href="#points" class="profile-nav-item" data-tab="points">
+                            <span class="nav-icon">🏆</span> Points History
+                        </a>
+                        <a href="#settings" class="profile-nav-item" data-tab="settings">
+                            <span class="nav-icon">⚙️</span> Settings
+                        </a>
+                    </nav>
+
+                    <!-- Mini Stats -->
+                    <div class="profile-mini-stats">
+                        <div class="mini-stat">
+                            <strong id="stat-total-bookings">8</strong>
+                            <span>Total trips</span>
+                        </div>
+                        <div class="mini-stat">
+                            <strong id="stat-countries">3</strong>
+                            <span>Countries</span>
+                        </div>
+                        <div class="mini-stat">
+                            <strong id="stat-reviews">5</strong>
+                            <span>Reviews</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- MAIN TABS CONTENT -->
+                <div class="profile-content">
+
+                    <!-- ===== BOOKINGS TAB ===== -->
+                    <div class="tab-pane active" id="tab-bookings">
+                        <div class="tab-header">
+                            <h2>My Bookings</h2>
+                            <div class="booking-filter-btns">
+                                <button class="filter-pill active" data-filter="all">All</button>
+                                <button class="filter-pill" data-filter="upcoming">Upcoming</button>
+                                <button class="filter-pill" data-filter="completed">Completed</button>
+                                <button class="filter-pill" data-filter="cancelled">Cancelled</button>
+                            </div>
+                        </div>
+
+                        <div class="bookings-list" id="bookings-list">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- ===== WISHLIST TAB ===== -->
+                    <div class="tab-pane hidden" id="tab-wishlist">
+                        <div class="tab-header">
+                            <h2>❤️ My Wishlist</h2>
+                            <p class="tab-desc">Experiences you've saved for later</p>
+                        </div>
+                        <div class="experiences-grid" id="wishlist-grid">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- ===== REVIEWS TAB ===== -->
+                    <div class="tab-pane hidden" id="tab-reviews">
+                        <div class="tab-header">
+                            <h2>⭐ My Reviews</h2>
+                            <p class="tab-desc">Share your feedback with the community</p>
+                        </div>
+                        <div class="reviews-list" id="my-reviews-list">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- ===== POINTS HISTORY TAB ===== -->
+                    <div class="tab-pane hidden" id="tab-points">
+                        <div class="tab-header">
+                            <h2>🏆 Points History</h2>
+                        </div>
+
+                        <!-- Points Summary Cards -->
+                        <div class="points-cards">
+                            <div class="points-summary-card earned">
+                                <span class="psc-icon">📈</span>
+                                <div>
+                                    <strong id="total-earned">3,450</strong>
+                                    <span>Total Earned</span>
+                                </div>
+                            </div>
+                            <div class="points-summary-card redeemed">
+                                <span class="psc-icon">🎁</span>
+                                <div>
+                                    <strong id="total-redeemed">600</strong>
+                                    <span>Redeemed</span>
+                                </div>
+                            </div>
+                            <div class="points-summary-card balance">
+                                <span class="psc-icon">💎</span>
+                                <div>
+                                    <strong id="points-balance">2,850</strong>
+                                    <span>Balance</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Points Transactions -->
+                        <div class="points-history-list" id="points-history-list">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- ===== SETTINGS TAB ===== -->
+                    <div class="tab-pane hidden" id="tab-settings">
+                        <div class="tab-header">
+                            <h2>⚙️ Account Settings</h2>
+                        </div>
+
+                        <div class="settings-sections">
+
+                            <!-- Personal Info -->
+                            <div class="settings-card">
+                                <h3>Personal Information</h3>
+                                <form id="settings-form" class="settings-form">
+                                    <div class="grid-2" style="gap:var(--space-4)">
+                                        <div class="form-group">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-control" value="Ahmed"
+                                                id="settings-firstname" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" value="Mansour"
+                                                id="settings-lastname" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" value="ahmed.mansour@email.com"
+                                            id="settings-email" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" value="+20 100 123 4567"
+                                            id="settings-phone" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Bio (Optional)</label>
+                                        <textarea class="form-control" rows="3" id="settings-bio"
+                                            placeholder="Tell hosts a bit about yourself…"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="settings-card">
+                                <h3>Change Password</h3>
+                                <form id="pw-change-form" class="settings-form">
+                                    <div class="form-group">
+                                        <label class="form-label">Current Password</label>
+                                        <div class="input-group">
+                                            <span class="input-icon">🔒</span>
+                                            <input type="password" class="form-control" placeholder="Current password"
+                                                id="current-pw" />
+                                            <button type="button" class="input-icon-right toggle-pw"
+                                                data-target="current-pw">👁️</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">New Password</label>
+                                        <div class="input-group">
+                                            <span class="input-icon">🔑</span>
+                                            <input type="password" class="form-control" placeholder="New password"
+                                                id="new-pw" />
+                                            <button type="button" class="input-icon-right toggle-pw"
+                                                data-target="new-pw">👁️</button>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline">Update Password</button>
+                                </form>
+                            </div>
+
+                            <!-- Notifications -->
+                            <div class="settings-card">
+                                <h3>Notifications</h3>
+                                <div class="toggle-list">
+                                    <div class="toggle-item">
+                                        <div>
+                                            <strong>Booking confirmations</strong>
+                                            <p>Receive email when booking is confirmed</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked id="notif-bookings" />
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <div>
+                                            <strong>Loyalty points updates</strong>
+                                            <p>Get notified when you earn or redeem points</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked id="notif-points" />
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <div>
+                                            <strong>Promotional emails</strong>
+                                            <p>Special offers and new experiences</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" id="notif-promo" />
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <div>
+                                            <strong>Host messages</strong>
+                                            <p>Messages from your experience hosts</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked id="notif-messages" />
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Danger Zone -->
+                            <div class="settings-card danger-card">
+                                <h3>Danger Zone</h3>
+                                <div class="danger-actions">
+                                    <div class="danger-item">
+                                        <div>
+                                            <strong>Deactivate Account</strong>
+                                            <p>Temporarily disable your account</p>
+                                        </div>
+                                        <button class="btn btn-sm"
+                                            style="border:2px solid #dc2626;color:#dc2626;border-radius:var(--radius-full)">Deactivate</button>
+                                    </div>
+                                    <div class="danger-item">
+                                        <div>
+                                            <strong>Delete Account</strong>
+                                            <p>Permanently delete your account and all data</p>
+                                        </div>
+                                        <button class="btn btn-sm"
+                                            style="background:#dc2626;color:#fff;border-radius:var(--radius-full)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- /profile-content -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Redeem Modal -->
+    <div class="modal-overlay" id="redeem-modal">
+        <div class="modal" style="text-align:left; max-width:520px">
+            <h2 style="margin-bottom:var(--space-2)">🎁 Redeem Points</h2>
+            <p style="color:var(--color-text-muted);margin-bottom:var(--space-6)">You have <strong
+                    id="modal-points">2,850</strong> points. Redeem for discounts:</p>
+            <div class="redeem-options" id="redeem-options">
+                <!-- Injected by JS -->
+            </div>
+            <div style="text-align:right;margin-top:var(--space-6)">
+                <button class="btn btn-outline" id="redeem-modal-close">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">Aeshha</div>
+                    <p>Authentic Egyptian experiences, curated by passionate locals.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="experiences.html">All Experiences</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Aeshha. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

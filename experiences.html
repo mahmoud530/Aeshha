@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiences – Aeshha</title>
+    <meta name="description"
+        content="Browse all authentic Egyptian experiences. Filter by category, location, price and more." />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/experiences.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Aeshha Logo" />
+                <span class="logo-text" style="color:var(--color-primary)">Aeshha</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" style="color:var(--color-text)">Home</a></li>
+                <li><a href="experiences.html" class="nav-link active" style="color:var(--color-text)">Experiences</a>
+                </li>
+                <li><a href="index.html#how-it-works" class="nav-link" style="color:var(--color-text)">How It Works</a>
+                </li>
+                <li><a href="index.html#about" class="nav-link" style="color:var(--color-text)">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                <a href="login.html#register" class="btn btn-secondary btn-sm">Join Free</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span style="background:var(--color-text)"></span>
+                <span style="background:var(--color-text)"></span>
+                <span style="background:var(--color-text)"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="login.html" class="btn btn-primary btn-block" style="margin-top:8px">Login / Register</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="animate-fade-up">All Experiences</h1>
+            <p class="animate-fade-up delay-1">Discover authentic Egyptian culture across 27 governorates</p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="exp-main">
+        <div class="container">
+            <div class="exp-layout">
+
+                <!-- ===== SIDEBAR FILTERS ===== -->
+                <aside class="filter-sidebar" id="filter-sidebar">
+                    <div class="filter-header">
+                        <h3>🔽 Filters</h3>
+                        <button id="clear-filters" class="btn btn-sm btn-outline">Clear All</button>
+                    </div>
+
+                    <!-- Category -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Category</h4>
+                        <div class="filter-options" id="filter-category">
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="all" checked />
+                                <span>All Categories</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="food" />
+                                <span>🍽️ Food & Cooking</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="crafts" />
+                                <span>🎨 Local Crafts</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="tours" />
+                                <span>🚣 Tours & Adventures</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="photography" />
+                                <span>📸 Photography</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Location</h4>
+                        <div class="input-group">
+                            <span class="input-icon">📍</span>
+                            <input type="text" id="filter-location" class="form-control"
+                                placeholder="Search location…" />
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Price per Person</h4>
+                        <div class="price-range-wrap">
+                            <div class="price-display">
+                                <span id="price-min-val">0</span> EGP
+                                <span>–</span>
+                                <span id="price-max-val">5000</span> EGP
+                            </div>
+                            <input type="range" id="filter-price-min" min="0" max="5000" value="0" step="50"
+                                class="range-slider" />
+                            <input type="range" id="filter-price-max" min="0" max="5000" value="5000" step="50"
+                                class="range-slider" />
+                        </div>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Minimum Rating</h4>
+                        <div class="filter-options" id="filter-rating">
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="0" checked />
+                                <span>Any Rating</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4" />
+                                <span>★★★★ 4.0+</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4.5" />
+                                <span>★★★★★ 4.5+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Duration -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Duration</h4>
+                        <div class="filter-options" id="filter-duration">
+                            <label class="filter-option">
+                                <input type="radio" name="duration" value="all" checked />
+                                <span>Any Duration</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="duration" value="half" />
+                                <span>Half Day (≤4h)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="duration" value="full" />
+                                <span>Full Day (4–8h)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="duration" value="multi" />
+                                <span>Multi Day (8h+)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="apply-filters">Apply Filters</button>
+                </aside>
+
+                <!-- ===== EXPERIENCES CONTENT ===== -->
+                <div class="exp-content">
+
+                    <!-- Toolbar -->
+                    <div class="exp-toolbar">
+                        <div class="exp-count">
+                            Showing <strong id="exp-count">0</strong> experiences
+                        </div>
+                        <div class="toolbar-right">
+                            <div class="view-toggles">
+                                <button class="view-btn active" id="view-grid" title="Grid view">⊞</button>
+                                <button class="view-btn" id="view-list" title="List view">≡</button>
+                            </div>
+                            <select class="form-control sort-select" id="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Active filter chips -->
+                    <div class="active-filters" id="active-filters"></div>
+
+                    <!-- Cards Grid -->
+                    <div class="experiences-grid" id="all-experiences">
+                        <!-- Injected by JS -->
+                    </div>
+
+                    <!-- Empty state -->
+                    <div class="empty-state hidden" id="empty-state">
+                        <span class="empty-icon">🔍</span>
+                        <h3>No experiences found</h3>
+                        <p>Try adjusting your filters.</p>
+                        <button class="btn btn-outline" onclick="document.getElementById('clear-filters').click()">Clear
+                            Filters</button>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Filter Toggle -->
+    <button class="mobile-filter-btn" id="mobile-filter-btn">
+        🔽 Filters
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">Aeshha</div>
+                    <p>Connecting curious travelers with passionate local Egyptians for authentic cultural experiences.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">🌐</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="experiences.html?category=food">Food & Cooking</a></li>
+                        <li><a href="experiences.html?category=crafts">Local Crafts</a></li>
+                        <li><a href="experiences.html?category=tours">Tours</a></li>
+                        <li><a href="experiences.html?category=photography">Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Aeshha. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

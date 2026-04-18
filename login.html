@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – Aeshha</title>
+    <meta name="description" content="Login or register to Aeshha – the authentic Egyptian experiences platform." />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body class="login-page">
+
+    <!-- Decorative Background -->
+    <div class="login-bg">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+        <div class="bg-pattern"></div>
+    </div>
+
+    <!-- Back Link -->
+    <a href="index.html" class="back-link">← Back to Aeshha</a>
+
+    <div class="login-container">
+
+        <!-- Brand Panel -->
+        <div class="login-brand">
+            <div class="brand-content">
+                <a href="index.html" class="brand-logo">
+                    <img src="img/logo.png" alt="Aeshha" class="brand-logo-img animate-float" />
+                </a>
+                <h1 class="brand-title">Aeshha</h1>
+                <p class="brand-tagline">عيشها – Live It</p>
+                <p class="brand-desc">Discover authentic Egyptian culture through the eyes of passionate local hosts.
+                </p>
+
+                <div class="brand-features">
+                    <div class="brand-feature">
+                        <span class="bf-icon">🍽️</span>
+                        <span>Home-cooked meals with local families</span>
+                    </div>
+                    <div class="brand-feature">
+                        <span class="bf-icon">🎨</span>
+                        <span>Ancient craft workshops</span>
+                    </div>
+                    <div class="brand-feature">
+                        <span class="bf-icon">🚣</span>
+                        <span>Hidden Nile adventures</span>
+                    </div>
+                    <div class="brand-feature">
+                        <span class="bf-icon">📸</span>
+                        <span>Photography at iconic landmarks</span>
+                    </div>
+                </div>
+
+                <div class="brand-stats">
+                    <div class="bs-item">
+                        <strong>1,200+</strong><span>Experiences</span>
+                    </div>
+                    <div class="bs-divider"></div>
+                    <div class="bs-item">
+                        <strong>340+</strong><span>Hosts</span>
+                    </div>
+                    <div class="bs-divider"></div>
+                    <div class="bs-item">
+                        <strong>★ 4.9</strong><span>Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Panel -->
+        <div class="login-form-panel">
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tab-login" data-tab="login">Login</button>
+                <button class="auth-tab" id="tab-register" data-tab="register">Register</button>
+            </div>
+
+            <!-- ===== LOGIN FORM ===== -->
+            <div class="auth-form" id="form-login">
+                <div class="form-header">
+                    <h2>Welcome back! 👋</h2>
+                    <p>Login to access your bookings and loyalty points.</p>
+                </div>
+
+                <form id="login-form" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="login-email" class="form-control" placeholder="yourname@email.com"
+                                required autocomplete="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="login-password">
+                            Password
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="login-password" class="form-control"
+                                placeholder="Enter your password" required autocomplete="current-password" />
+                            <button type="button" class="input-icon-right toggle-pw" data-target="login-password"
+                                aria-label="Toggle password">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="check-label">
+                            <input type="checkbox" id="remember-me" />
+                            <span class="checkmark"></span>
+                            Remember me for 30 days
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" id="login-btn">
+                        Login to Aeshha
+                    </button>
+
+                    <div class="divider"><span>or continue with</span></div>
+
+                    <div class="social-buttons">
+                        <button type="button" class="btn btn-social" id="google-login">
+                            <span>🔵</span> Google
+                        </button>
+                        <button type="button" class="btn btn-social" id="facebook-login">
+                            <span>🔷</span> Facebook
+                        </button>
+                    </div>
+                </form>
+
+                <p class="switch-msg">
+                    Don't have an account?
+                    <button class="switch-btn" data-switch="register">Register here →</button>
+                </p>
+            </div>
+
+            <!-- ===== REGISTER FORM ===== -->
+            <div class="auth-form hidden" id="form-register">
+                <div class="form-header">
+                    <h2>Join Aeshha ✨</h2>
+                    <p>Create your account and start exploring authentic Egypt.</p>
+                </div>
+
+                <!-- Role Selector -->
+                <div class="role-selector" id="role-selector">
+                    <button type="button" class="role-btn active" data-role="traveler">
+                        <span class="role-icon">🧳</span>
+                        <span class="role-label">Traveler</span>
+                        <span class="role-desc">Explore experiences</span>
+                    </button>
+                    <button type="button" class="role-btn" data-role="host">
+                        <span class="role-icon">🏠</span>
+                        <span class="role-label">Local Host</span>
+                        <span class="role-desc">Share your culture</span>
+                    </button>
+                </div>
+
+                <form id="register-form" novalidate>
+                    <div class="grid-2" style="gap:var(--space-4)">
+                        <div class="form-group">
+                            <label class="form-label" for="reg-firstname">First Name</label>
+                            <div class="input-group">
+                                <span class="input-icon">👤</span>
+                                <input type="text" id="reg-firstname" class="form-control" placeholder="Ahmed"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-lastname">Last Name</label>
+                            <div class="input-group">
+                                <span class="input-icon">👤</span>
+                                <input type="text" id="reg-lastname" class="form-control" placeholder="Hassan"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-email">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="reg-email" class="form-control" placeholder="yourname@email.com"
+                                required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-phone">Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-icon">📱</span>
+                            <input type="tel" id="reg-phone" class="form-control" placeholder="+20 10X XXX XXXX" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-password">Password</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="reg-password" class="form-control"
+                                placeholder="Min. 8 characters" required />
+                            <button type="button" class="input-icon-right toggle-pw" data-target="reg-password"
+                                aria-label="Toggle password">👁️</button>
+                        </div>
+                        <div class="password-strength" id="pw-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strength-fill"></div>
+                            </div>
+                            <span class="strength-label" id="strength-label">Enter a password</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-confirm">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="reg-confirm" class="form-control" placeholder="Repeat password"
+                                required />
+                            <button type="button" class="input-icon-right toggle-pw" data-target="reg-confirm"
+                                aria-label="Toggle password">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group host-field hidden" id="host-city-group">
+                        <label class="form-label" for="reg-city">Your City / Governorate</label>
+                        <div class="input-group">
+                            <span class="input-icon">📍</span>
+                            <select id="reg-city" class="form-control">
+                                <option value="">Select your city…</option>
+                                <option>Cairo</option>
+                                <option>Alexandria</option>
+                                <option>Luxor</option>
+                                <option>Aswan</option>
+                                <option>Hurghada</option>
+                                <option>Sharm El-Sheikh</option>
+                                <option>Giza</option>
+                                <option>Suez</option>
+                                <option>Siwa</option>
+                                <option>Dahab</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="check-label">
+                            <input type="checkbox" id="agree-terms" required />
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary btn-block btn-lg" id="register-btn">
+                        Create My Account
+                    </button>
+
+                    <div class="divider"><span>or</span></div>
+
+                    <div class="social-buttons">
+                        <button type="button" class="btn btn-social">
+                            <span>🔵</span> Sign up with Google
+                        </button>
+                    </div>
+                </form>
+
+                <p class="switch-msg">
+                    Already have an account?
+                    <button class="switch-btn" data-switch="login">Login here →</button>
+                </p>
+            </div>
+
+        </div><!-- /form-panel -->
+    </div><!-- /container -->
+
+    <!-- Toast -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
